@@ -6,10 +6,9 @@
 /*   By: tbabou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 20:50:31 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/05 21:21:51 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/07 14:46:29 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -21,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-			return ((char*)(s + i));
+			return ((char *)(s + i));
 		i--;
 	}
 	return (NULL);
