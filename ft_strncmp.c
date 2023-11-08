@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 17:31:33 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/08 14:57:31 by tbabou           ###   ########.fr       */
+/*   Created: 2023/11/08 14:39:47 by tbabou            #+#    #+#             */
+/*   Updated: 2023/11/08 14:56:57 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
 
-char	*ft_toupper(char *str);
-int		ft_atoi(char *str);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-void	*ft_memmove(void *dst, const void *src, size_t n);
-void	*ft_memset(void *str, int c, size_t n);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
-
-#endif
+	i = 0;
+	while (i != n)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
+}
