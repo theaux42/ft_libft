@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:31:33 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/09 15:50:38 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/09 16:11:47 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 char	*ft_toupper(char *str);
 char	*ft_strchr(const char *s, int c);
-char	*ft_tolower(char *str);
-char	*ft_toupper(char *str);
+int		ft_tolower(int);
+int		ft_toupper(int c);
 int		ft_atoi(char *str);
 int		ft_isspace(int c);
 int		ft_isalnum(int c);
