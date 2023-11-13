@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:31:33 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/12 02:48:17 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/13 01:50:18 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ int		ft_intlen(int nbr);
 int		ft_atoi(char *str);
 int		ft_strlen(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_putchar_fd(int c, int fd);
+void	ft_putnbr_fd(int nb, int fd);
+void	ft_putstr_fd(char *str, int fd);
+void	ft_putendl_fd(char const *s, int fd);
 void	*ft_bzero(void *b, size_t len);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *str, int c, size_t n);
