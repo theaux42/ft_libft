@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 02:36:52 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/12 02:41:55 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/16 16:07:55 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	char	*tmp;
 
 	i = 0;
-	tmp = malloc(ft_strlen(s1) + 1);
+	tmp = malloc(ft_strlen((char *)s1) + 1);
 	if (!tmp)
 		return (NULL);
 	while (s1[i])
