@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:31:33 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/14 18:45:34 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/16 15:25:06 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+char	*ft_itoa(int n);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
