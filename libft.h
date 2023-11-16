@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tbabou <tbabou@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:31:33 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/16 15:25:06 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/16 18:00:33 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 char	*ft_itoa(int n);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
