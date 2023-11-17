@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:31:33 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/16 23:40:35 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/17 19:35:45 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int		ft_isspace(int c);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
+int		ft_isprint(int c);
 int		ft_isdigit(int c);
 int		ft_intlen(int nbr);
 int		ft_atoi(char *str);
@@ -48,5 +49,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
+char		**ft_split(char const *s, char c);
+char		*ft_strtrim(char const *s1, char const *set);
 
 #endif
