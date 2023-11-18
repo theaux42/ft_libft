@@ -1,3 +1,5 @@
-a.out
+libftTester/**
 .vscode/**
 main.c
+**.out
+**.a
