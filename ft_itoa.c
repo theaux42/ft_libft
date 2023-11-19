@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:44:29 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/17 21:09:02 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/18 02:04:52 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_itoa(int n)
 	int		j;
 
 	j = ft_intlen(n) - 1;
-	str = malloc(malloc_len(n));
+	str = (char *)malloc(sizeof(char) * (ft_intlen(n) + 1));
 	if (!str)
 		return (NULL);
 	if (n == -2147483648)

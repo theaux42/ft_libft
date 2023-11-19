@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:31:33 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/17 19:52:22 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/19 21:25:22 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int		ft_isprint(int c);
 int		ft_isdigit(int c);
 int		ft_intlen(int nbr);
 int		ft_atoi(const char *str);
-int		ft_strlen(char *str);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putchar_fd(int c, int fd);
@@ -48,6 +47,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t n);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 

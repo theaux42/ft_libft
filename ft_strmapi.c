@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 23:40:11 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/16 23:40:13 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/16 23:51:21 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	if (!s)
 		return (ft_strdup(""));
-	len = ft_strlen(s);
+	len = ft_strlen((char *)s);
 	new = (char *)malloc(sizeof(char) * (len + 1));
 	if (!new)
 		return (NULL);
