@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 02:31:57 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/19 21:30:44 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/19 23:00:19 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_calloc(size_t count, size_t size)
 	tmp = malloc(count * size);
 	if (!tmp)
 		return (NULL);
-	while (i < count)
+	while (i < count * size)
 	{
 		tmp[i] = 0;
 		i++;
