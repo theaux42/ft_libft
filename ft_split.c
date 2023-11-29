@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tbabou <tbabou@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:39:18 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/19 23:39:57 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/11/23 23:02:51 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ static size_t	ft_wordlen(char const *str, char characters)
 	return (i);
 }
 
-static char	**split(char const *str, char characters, char **array, size_t words_count)
+static char	**split(char const *str, char characters, char **array,
+		size_t words_count)
 {
 	size_t	i;
 	size_t	j;
