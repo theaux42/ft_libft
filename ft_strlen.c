@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbabou <tbabou@42.fr>                      +#+  +:+       +#+        */
+/*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:28:16 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/24 01:00:13 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/12/11 16:21:27 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	i;
+	const char	*s;
 
-	i = 0;
-	while (str && str[i] != '\0')
-		i++;
-	return (i);
+	s = str;
+	while (*s)
+		s++;
+	return (s - str);
 }

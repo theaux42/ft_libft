@@ -6,29 +6,43 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:04:35 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/09 14:28:53 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/12/11 16:02:10 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+static size_t	str_len(char const *str)
 {
-	size_t	srclen;
-	size_t	dstlen;
+	size_t	i;
 
-	srclen = ft_strlen((char *)src);
-	dstlen = ft_strlen(dst);
-	if (dstlen >= size)
-		dstlen = size;
-	if (dstlen == size)
-		return (size + srclen);
-	if (srclen < size - dstlen)
-		ft_memcpy(dst + dstlen, src, srclen + 1);
+	i = 0;
+	while (*(str + i))
+		i++;
+	return (i);
+}
+
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
+{
+	size_t		dest_len;
+	size_t		total_len;
+	const char	*s;
+
+	if ((!dest || !src) && !n)
+		return (0);
+	s = src;
+	dest_len = 0;
+	while (*(dest + dest_len) && dest_len < n)
+		dest_len++;
+	if (dest_len < n)
+		total_len = dest_len + str_len(s);
 	else
+		return (n + str_len(s));
+	while (*s && (dest_len + 1) < n)
 	{
-		ft_memcpy(dst + dstlen, src, size - dstlen - 1);
-		dst[size - 1] = '\0';
+		*(dest + dest_len) = *s++;
+		dest_len++;
 	}
-	return (dstlen + srclen);
+	*(dest + dest_len) = '\0';
+	return (total_len);
 }

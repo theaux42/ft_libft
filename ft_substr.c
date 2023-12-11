@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:46:26 by tbabou            #+#    #+#             */
-/*   Updated: 2023/12/11 14:08:33 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/12/11 15:05:17 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,23 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
+	char	*tab;
+	size_t	remmtab;
 
-	i = (size_t)start;
-	j = 0;
-	if (!s)
+	if (s == NULL)
 		return (NULL);
-	str = malloc(sizeof(char) * len + 1);
-	if (!str)
-		return (NULL);
-	while (s[i])
+	remmtab = ft_strlen(s) - start;
+	if (start < (unsigned int)ft_strlen(s))
 	{
-		if (j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
+		if (remmtab > len)
+			tab = (char *)ft_calloc(sizeof(char), len + 1);
+		else
+			tab = (char *)ft_calloc(sizeof(char), remmtab + 1);
+		if (tab == NULL)
+			return (NULL);
+		ft_strlcpy(tab, &s[start], len + 1);
 	}
-	str[j] = '\0';
-	return (str);
+	else
+		tab = (char *)ft_calloc(1, 1);
+	return (tab);
 }

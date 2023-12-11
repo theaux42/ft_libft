@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:39:03 by tbabou            #+#    #+#             */
-/*   Updated: 2023/12/11 14:49:42 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/12/11 14:55:44 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	ft_strlcpy(new, s1 + start, end - start + 1);
 	return (new);
-}
-
-int	main(void)
-{
-	char *str = "     Hello      World        ";
-	char *str2 = ft_strtrim(str, " ");
-	printf("=> %s\n=> %s", str, str2);
 }
