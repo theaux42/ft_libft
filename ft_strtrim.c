@@ -6,12 +6,11 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:39:03 by tbabou            #+#    #+#             */
-/*   Updated: 2023/12/11 14:55:44 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/12/14 18:11:03 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_getstart(const char *s1, const char *set)
 {

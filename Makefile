@@ -18,9 +18,6 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra -I ./
 
-breaker:
-			$(CC) -nostartfiles -shared -fPIC -ldl $(CFLAGS) -o libft.so $(SRCS) $(SRCBONUS)
-
 .c.o:
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 

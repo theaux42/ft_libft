@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbabou <tbabou@42.fr>                      +#+  +:+       +#+        */
+/*   By: tbabou <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:39:18 by tbabou            #+#    #+#             */
-/*   Updated: 2023/11/23 23:02:51 by tbabou           ###   ########.fr       */
+/*   Updated: 2023/12/14 16:37:18 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ static char	**split(char const *str, char characters, char **array,
 		array[i] = ft_substr(str, j, ft_wordlen(&str[j], characters));
 		if (!array[i])
 		{
+			while (i > 0)
+				free(array[i--]);
+			free(array[0]);
 			return (NULL);
 		}
 		while (str[j] && str[j] != characters)
