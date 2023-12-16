@@ -43,7 +43,7 @@ static size_t	ft_wordlen(char const *str, char characters)
 	return (i);
 }
 
-static char	**split(char const *str, char characters, char **array,
+static char	**pas_cool_split(char const *str, char characters, char **array,
 		size_t words_count)
 {
 	size_t	i;
@@ -82,6 +82,6 @@ char	**ft_split(char const *str, char characters)
 	array = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!array)
 		return (NULL);
-	array = split(str, characters, array, words);
+	array = pas_cool_split(str, characters, array, words);
 	return (array);
 }
