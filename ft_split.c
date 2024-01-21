@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbabou <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tbabou <tbabou@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:39:18 by tbabou            #+#    #+#             */
-/*   Updated: 2023/12/14 16:37:18 by tbabou           ###   ########.fr       */
+/*   Updated: 2024/01/21 05:33:16 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static size_t	ft_wordlen(char const *str, char characters)
 }
 
 static char	**pas_cool_split(char const *str, char characters, char **array,
-		size_t words_count)
+		size_t words_count, t_m_free *m_free)
 {
 	size_t	i;
 	size_t	j;
@@ -55,12 +55,10 @@ static char	**pas_cool_split(char const *str, char characters, char **array,
 	{
 		while (str[j] && str[j] == characters)
 			j++;
-		array[i] = ft_substr(str, j, ft_wordlen(&str[j], characters));
+		array[i] = ft_substr(str, j, ft_wordlen(&str[j], characters), m_free);
 		if (!array[i])
 		{
-			while (i > 0)
-				free(array[i--]);
-			free(array[0]);
+			ft_free_all(m_free);
 			return (NULL);
 		}
 		while (str[j] && str[j] != characters)
@@ -71,7 +69,7 @@ static char	**pas_cool_split(char const *str, char characters, char **array,
 	return (array);
 }
 
-char	**ft_split(char const *str, char characters)
+char	**ft_split(char const *str, char characters, t_m_free *m_free)
 {
 	char	**array;
 	size_t	words;
@@ -79,9 +77,9 @@ char	**ft_split(char const *str, char characters)
 	if (!str)
 		return (NULL);
 	words = ft_wordcount(str, characters);
-	array = (char **)malloc(sizeof(char *) * (words + 1));
+	array = (char **)ft_malloc(sizeof(char *) * (words + 1), m_free);
 	if (!array)
 		return (NULL);
-	array = pas_cool_split(str, characters, array, words);
+	array = pas_cool_split(str, characters, array, words, m_free);
 	return (array);
 }

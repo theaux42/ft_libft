@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tbabou <tbabou@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:39:03 by tbabou            #+#    #+#             */
-/*   Updated: 2023/12/14 18:11:03 by tbabou           ###   ########.fr       */
+/*   Updated: 2024/01/21 05:31:57 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_getend(const char *s1, const char *set)
 	return (len - i);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set, t_m_free *m_free)
 {
 	int		start;
 	int		end;
@@ -55,8 +55,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = ft_getstart(s1, set);
 	end = ft_getend(s1, set);
 	if (start >= end)
-		return (ft_strdup(""));
-	new = (char *)malloc(sizeof(char) * (end - start + 1));
+		return (ft_strdup("", m_free));
+	new = (char *)ft_malloc(sizeof(char) * (end - start + 1), m_free);
 	if (new == NULL)
 		return (NULL);
 	ft_strlcpy(new, s1 + start, end - start + 1);
