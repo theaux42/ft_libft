@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tbabou <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tbabou <tbabou@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 17:31:33 by tbabou            #+#    #+#             */
-/*   Updated: 2023/12/14 15:53:26 by tbabou           ###   ########.fr       */
+/*   Updated: 2024/01/20 23:57:11 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,25 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
+typedef struct s_free
+{
+	void			*ptr;
+	struct s_free	*next;
+}					t_free;
+
+typedef struct s_m_free
+{
+	struct s_free	*list;
+}					t_m_free;
+
+/*Beginning of the part about ft_malloc;*/
+void	*ft_malloc(size_t size, t_m_free *m_free);
+void	ft_add_malloc(void *ptr, t_m_free *m_free);
+void	ft_free(void *ptr, t_m_free *m_free);
+void	ft_free_all(t_m_free *m_free);
+/*Ending of the part about ft_malloc;*/
 char	*ft_itoa(int n);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);

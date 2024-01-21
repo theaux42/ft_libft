@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_malloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbabou <tbabou@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 02:47:41 by tbabou            #+#    #+#             */
-/*   Updated: 2024/01/20 23:47:01 by tbabou           ###   ########.fr       */
+/*   Created: 2024/01/20 23:35:26 by tbabou            #+#    #+#             */
+/*   Updated: 2024/01/20 23:47:21 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(int nbr)
+void	*ft_malloc(size_t size, t_m_free *m_free)
 {
-	int	len;
+	void	*ptr;
+	t_free	*node;
 
-	len = 0;
-	if (nbr < 1)
-		len++;
-	while (nbr)
+	ptr = malloc(size);
+	if (!ptr)
+		return (NULL);
+	node = malloc(sizeof(t_free));
+	if (!node)
 	{
-		nbr /= 10;
-		len++;
+		free(ptr);
+		return (NULL);
 	}
-	return (len);
+	node->ptr = ptr;
+	node->next = m_free->list;
+	m_free->list = node;
+	return (ptr);
 }
