@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 22:32:27 by tbabou            #+#    #+#             */
-/*   Updated: 2024/03/08 17:35:50 by tbabou           ###   ########.fr       */
+/*   Updated: 2024/03/08 18:20:04 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int	get_final_size(char *s1, char *s2, char *buffer)
 		size = ft_strlen(s2);
 		ft_gnl_strlcpy(buffer, "", BUFFER_SIZE + 2);
 	}
-	printf("\nsize = %d\nbuffer = %s\n", size, buffer);
 	return (size);
 }
 
