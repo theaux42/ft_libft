@@ -7,6 +7,9 @@ LIBC =	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 ADDITIONAL =	ft_itoa.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \
 				ft_split.c ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_substr.c ft_striteri.c \
 				ft_isspace.c ft_free.c ft_malloc.c ft_free_all.c ft_add_malloc.c ft_intlen.c \
+				ft_dft_strjoin.c ft_dft_strdup.c get_next_line.c ft_isnewline.c ft_dft_calloc.c \
+				ft_dft_substr.c ft_printf.c print_hexa.c print_nbr.c print_ptr.c \
+				print_str.c print_utils.c ft_dft_itoa.c \
 
 SRCS = ${LIBC} ${ADDITIONAL}
 

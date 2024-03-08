@@ -6,7 +6,7 @@
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 17:28:16 by tbabou            #+#    #+#             */
-/*   Updated: 2023/12/11 16:21:27 by tbabou           ###   ########.fr       */
+/*   Updated: 2024/03/08 17:34:00 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 size_t	ft_strlen(const char *str)
 {
-	const char	*s;
+	int	i;
 
-	s = str;
-	while (*s)
-		s++;
-	return (s - str);
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i])
+		i++;
+	return (i);
 }

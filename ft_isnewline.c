@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isnewline.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbabou <tbabou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 18:48:25 by tbabou            #+#    #+#             */
-/*   Updated: 2024/03/08 01:41:29 by tbabou           ###   ########.fr       */
+/*   Created: 2024/03/08 00:33:19 by tbabou            #+#    #+#             */
+/*   Updated: 2024/03/08 17:33:31 by tbabou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_fd(int c, int fd)
+int	ft_isnewline(char *str)
 {
-	write(fd, &c, 1);
-	return (1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+		{
+			return (1);
+		}
+		i++;
+	}
+	return (0);
 }
