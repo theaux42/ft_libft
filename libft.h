@@ -94,7 +94,7 @@ int		ft_putnbr(int nb);
 int		ft_putunbr(unsigned int nb);
 int		ft_putptr(unsigned long long ptr);
 
-// Functions of the get_next_line
+// Functions of the get_next_line function
 int		isnewline(char *str);
 char	*ft_cleanup(char *str);
 char	*get_next_line(int fd);
